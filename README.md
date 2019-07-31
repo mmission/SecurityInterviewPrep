@@ -1,5 +1,4 @@
-# SecurityInterviewPrep
-## Welcome to my Security Interview Prep Study Guides
+# Security Interview Prep
 ## Contents
 1. [OWASP TOP 10-ish](https://github.com/mmission/SecurityInterviewPrep/blob/master/owasp.md)
 2. [Authentication](https://github.com/mmission/SecurityInterviewPrep/blob/master/authen.md)
