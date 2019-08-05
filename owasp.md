@@ -1,10 +1,23 @@
 ## OWASP Top 10-ish
 
+* Injection
+* Broken Authentication
+* Sensitive Data Exposure
+* XML External Entities
+* Broken Access Control
+* Security Misconfiguration
+* Cross-Site Scripting (XSS)
+* Insecure Deserialization
+* Cross-Site Request Forgery (CSRF)
+* Server-Side Request Forgery (SSRF)
+
 1. Injection
     * SQL Injection
-      *
-    * NoSQL Injection
       * 
+    * NoSQL Injection
+      *
+    * Blind SQLi
+      *
 
 **Remediations:**
 * Parameterized statements
@@ -54,7 +67,7 @@
 
 ---
 
-4. XML External Entities
+4. XML External Entities XXE
     * Are XML Entities allowed?
     * Are XSL Transformations secured?
     * Is a data format used that resembles or is based on XML?
@@ -70,6 +83,9 @@
 5. Broken Access Control
     * Bypassing access control checks
     * (I)DOR - (In)direct Object Reference
+      * A direct object reference occurs when a developer exposes a reference to an internal
+      implementation object, such as a file, directory, or database key. Without an access control check
+      or other protection, attackers can manipulate these references to access unauthorized data.
     * Broken CORS Configuration
     * Unauthenticated endpoints
     * Token manipulation (JWT/etc)
@@ -120,6 +136,7 @@
 * In situations where rich text is needed, use a standard sanitization library. But be ever vigilant for new bypasses and security issues related to the library
     * [DomPurify](https://github.com/cure53/DOMPurify)
 * Enable CSP (and hope you do it correctly)
+* adding httponly flag on session cookies - only protects you with getting secure cookies
 
 ---
 
@@ -179,7 +196,7 @@
 
 ---
 
-* Server-Side Request Forgery
+* Server-Side Request Forgery (SSRF)
     * The ability to make a web application make an HTTP request where the user controls all or part of the request
         * Full Control of URL
             * "Poor Man's Port Scanner" - You can force a web app to make a request to local resources and attempt to scan for interesting ports that are open

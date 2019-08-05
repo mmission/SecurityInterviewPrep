@@ -43,3 +43,4 @@
 * Subresource Integrity (SRI)
     * Ensures content fetched by your browser matches a cryptographic hash
     * Extremely useful when fetching JS/CSS payloads from a CDN or resource you do not control
+* Content Security Policy
